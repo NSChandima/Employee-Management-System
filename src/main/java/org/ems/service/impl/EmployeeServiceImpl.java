@@ -43,4 +43,14 @@ public class EmployeeServiceImpl implements EmployeeService {
             employeeRepository.deleteById(id);
         }
     }
+
+    @Override
+    public void updateEmployee(Employee employee) {
+        boolean isExist = employeeRepository.existsById(employee.getEmployeeId());
+        if (isExist){
+            employeeRepository.save(mapper.convertValue(employee,EmployeeEntity.class));
+        }
+    }
+
+
 }

@@ -28,7 +28,12 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteEmployee(@PathVariable Long id){
+    public void delete(@PathVariable Long id){
         employeeService.deleteEmployee(id);
+    }
+
+    @PatchMapping
+    public void update(@RequestBody Employee employee){
+        employeeService.updateEmployee(employee);
     }
 }

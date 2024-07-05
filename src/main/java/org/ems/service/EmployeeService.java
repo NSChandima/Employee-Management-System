@@ -12,4 +12,6 @@ public interface EmployeeService {
     List<Employee> get();
 
     void deleteEmployee(@PathVariable Long id);
+
+    void updateEmployee(Employee employee);
 }
