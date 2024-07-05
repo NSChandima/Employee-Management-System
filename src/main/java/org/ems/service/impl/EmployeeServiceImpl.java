@@ -52,5 +52,14 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
     }
 
+    @Override
+    public Employee retrieveById(Long id) {
+       return mapper.convertValue(employeeRepository.findById(id),Employee.class);
+    }
 
+    @Override
+    public Employee retrieveByFirstName(String firstName) {
+        return mapper.convertValue(
+                employeeRepository.findByFirstName(firstName),Employee.class);
+    }
 }

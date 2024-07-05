@@ -14,4 +14,8 @@ public interface EmployeeService {
     void deleteEmployee(@PathVariable Long id);
 
     void updateEmployee(Employee employee);
+
+    Employee retrieveById(Long id);
+
+    Employee retrieveByFirstName(String firstName);
 }
